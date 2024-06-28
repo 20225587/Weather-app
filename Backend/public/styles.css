@@ -1,7 +1,22 @@
+/* General styles */
+
 body {
     background-color: #121212;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto; /* Center the card */
 }
 
 .weather-card {
@@ -10,6 +25,7 @@ body {
     border-radius: 10px;
     padding: 20px;
     width: 300px;
+    margin: 0 auto; /* Center the card */
 }
 
 .weather-temp {
@@ -42,30 +58,42 @@ body {
     border-radius: 0 50px 50px 0;
 }
 
-.forecast-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
+.btn-outline-primary {
     color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 1000;
-    display: none;
+    border-color: #ffffff;
 }
 
-.forecast-popup h3 {
-    margin-bottom: 10px;
+.btn-outline-primary:hover {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+/* Forecast page styles */
+
+#forecastDays {
+    display: flex;
+    justify-content: space-around; /* Ensure items are evenly spaced */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    margin-top: 20px;
 }
 
 .forecast-day {
-    margin-bottom: 10px;
+    width: 150px; /* Adjust width to fit content */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: grey;
+    border-radius: 5px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 .forecast-day h5 {
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.forecast-day p {
+    font-size: 1.5rem;
+    margin-top: 5px;
 }
 
 .forecast-day img {
@@ -73,3 +101,56 @@ body {
     height: 50px;
     margin-top: 5px;
 }
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+    
+    .forecast-day {
+        width: 45%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .weather-card {
+        width: 100%;
+    }
+    
+    .forecast-day {
+        width: 30%; /* Adjust width for medium screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .weather-card {
+        width: 350px;
+    }
+    
+    .forecast-day {
+        width: 20%; /* Adjust width for large screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .weather-card {
+        width: 400px;
+    }
+}
+
+/* Additional styles for forecast.html */
+
+.text-center {
+    text-align: center;
+}
+
+.btn-back {
+    margin-top: 20px;
+}
+
+/* Bootstrap and Material Design Icons */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css');

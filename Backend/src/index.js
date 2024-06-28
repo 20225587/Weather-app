@@ -1,4 +1,3 @@
-// src/index.js
 const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
@@ -36,6 +35,12 @@ app.get("/api/forecast", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: "Error fetching 5-day forecast data" });
   }
+});
+
+// Endpoint to get current time
+app.get("/api/currentTime", (req, res) => {
+  const currentTime = new Date().toLocaleTimeString();
+  res.json({ currentTime });
 });
 
 app.listen(port, () => {
